@@ -1,0 +1,314 @@
+/* CSS reset   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+*{
+  padding: 0; margin: 0; 
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui,-apple-system,'Segoe UI','Microsoft JhengHei', 微軟正黑體, sans-serif; 
+}
+/* section =================================== */
+section{ 
+  min-height: 100vh; box-shadow: 0 1px 3px #000; padding: 20px;
+}
+section:nth-of-type(1){
+  background: url(../img/bg1_top.png) repeat-x fixed,
+              url(../img/bg1_left.png) no-repeat left bottom fixed,
+              url(../img/bg1_right.png) no-repeat right bottom fixed,
+              linear-gradient(45deg, rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)),
+              url(../img/bg1.jpg) no-repeat center bottom fixed;
+  background-size: 30%,20%,10%,auto,cover;
+}
+section:nth-of-type(2){
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.6)),
+              url(../img/bg2.jpg) no-repeat center bottom fixed;
+  background-size: auto,cover;
+}
+section:nth-of-type(3){
+  background: url(../img/bg6_1.png) fixed no-repeat left top / 500px ,
+              url(../img/bg6_2.png) fixed no-repeat right top / 500px ,
+              url(../img/bg6_3.png) fixed no-repeat right bottom / 500px ,
+              url(../img/bg6_4.png) fixed no-repeat left bottom / 300px ;
+  }
+h2{
+  background: url(../img/h2.png);
+  width: 400px; 
+  height: 120px; 
+  padding: 25px 50px 0 120px;
+  line-height: 70px;
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  /* box-shadow: 1px 1px 3px #000; */
+
+  filter: drop-shadow( 1px 1px 3px #000);
+}
+
+h2::before{
+  font-family:"Font Awesome 5 Pro";
+  content: "\f4ba";
+}
+
+section:nth-of-type(2) h2{ background-position: 0 -120px; }
+section:nth-of-type(3) h2{ background-position: 0 -240px; }
+
+/* header =================================== */
+header{
+  background: #ffffda;
+  position: relative;     /* 因子區域設定position: absolute; ，故父區域設定pos: rel;*/
+  height: 80px;     /* 因子區域設定 pos: abs; ，故設定高度*/
+  box-shadow: 0 1px 3px #000;
+}
+/* nav */
+nav{
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}
+nav a{
+  color: #03035c;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  /* background: red;      利用背景色彩，顯示範圍 */
+  
+  position: relative;
+}
+nav a::after{
+  content: "";
+  width: 0%;
+  height: 5px;
+  background: #5c3d03;
+  position: absolute; bottom: 0; left: 0;
+  /* transform: scale(0); */
+  transition: all .5s;
+}
+nav a:hover::after{
+  width: 100%;
+  /* transform: scale(1); */
+}
+nav a:nth-last-child(-n+2)::after{
+  width: 100%;
+  transform: scale(0);
+}
+nav a:nth-last-child(-n+2):hover::after{
+  transform: scale(1);
+}
+/* social */
+#social{
+  list-style-type: none;
+  background: url(../img/social_bg.png) no-repeat;
+  width: 200px;
+  /* overflow: hidden;   依子區域內容大小顯示區域，則利用overflow: hidden */
+  height: 70px;
+
+  padding-left: 20px;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#social li{
+   background: green;    /*先利用顏色替代旗標圖片 */
+  width: 50px;
+  height: 70px;
+  float: left;
+
+  margin-right: 5px;
+}
+#social li a{
+  display: block;     /* 以下3行，讓 a 區塊 可顯示 cursor */
+  width: 100%;
+  height: 100%;
+
+  text-indent: 100%;  /* 以下3行，文字隱藏的方法 */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#social li:first-child{background: url(../img/social1.png);}
+#social li:first-child:hover{background: url(../img/social1_hover.png);}
+#social li:nth-child(2){background: url(../img/social2.png);}
+#social li:nth-child(2):hover{background: url(../img/social2_hover.png);}
+#social li:last-child{background: url(../img/social3.png);}
+#social li:last-child:hover{background: url(../img/social3_hover.png);}
+
+/* #logo */
+#logo{
+  width: 250px;
+  position: absolute;
+  left: 50%; top: 0;
+  transform: translateX(-50%);
+  filter: drop-shadow(1px 1px 0 #000);
+}
+
+
+/* section1  #intro 景點介紹 ==================== */
+#intro div{
+  font-family: 'Indie Flower';
+  background: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border: 1px solid #850707;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #000 ;
+  /* margin-bottom: 20px; */
+}
+
+h3{
+  font-size: 20px;
+  color: #03035c;
+  line-height: 50px;
+}
+h3::before{
+  content:"";
+  background: url(../img/h3_icon.png) no-repeat;
+  background-size: contain;
+  width: 30px; height: 60px;
+  display: inline-block;
+  vertical-align: middle;
+}
+p{
+  font-size: 16px;
+  text-indent: 32px;
+  padding-left: 32px;
+  line-height: 26px;
+  text-align: justify;
+  vertical-align: middle;
+}
+.notes{
+  background: yellow; padding: 5px; margin: 10px;
+  width: 200px; height: 50px;
+}
+
+#intro ul{
+  list-style: none;
+}
+
+#intro li{
+  background: url(../img/icon3.png) 0 0/auto 20px no-repeat;
+  padding-left: 40px;
+  line-height: 30px;
+}
+
+/* #intro li:nth-child(2n){ 
+  background: url(../img/icon02.png) 0 0/auto 20px no-repeat;
+} */
+/* #intro li:nth-child(-n+3){ 
+  background: url(../img/icon03.png) 0 0/auto 20px no-repeat;
+} */
+#intro li:nth-last-child(-n+3){ 
+  /* background: url(../img/icon03.png) 0 0/auto 20px no-repeat; */
+}
+
+
+
+/* section2  #figure 景點欣賞 ==================== */
+#figure>div{
+  overflow: hidden;
+  width: calc( 400px*3 + 1%*6 );
+  /* background: yellow; */
+  margin: auto;
+}
+#figure .h3_iconAsia::before{
+  content:"";
+  background: url(../img/h3_icon_asia.png) no-repeat center center;
+  background-size: contain;
+  margin-right: 10px;
+}
+figure{
+  width: 400px; height: 250px;    /* 利用chrome檢查了解圖片尺寸變更方法 */
+  position: relative;             /* figcaption 的 父區域 */
+  overflow: hidden;                /* 其目的： figcaption 超出範圍進行隱藏 */
+
+  float: left;
+  margin: 1%;
+  transition: all .5s;
+
+}
+figure img{
+  width: 100%; height: 100%;
+  display: block;               /* 運用原因：img 與 下方figcaption 產生縫隙 */
+  transition: all .5s;
+
+}
+figcaption{
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%; height: 100%;
+
+  position: absolute; top: 0; left: 0;
+  transition: all .5s;
+
+}
+figcaption div:nth-child(1){
+  font-size: 20px; height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: rgba(173, 57, 138, 0.46);
+  box-shadow: 0 1px #000;
+
+  position: relative;             /* figcaption 中 【英文地點】 的 父區域 */
+}
+figcaption div:nth-child(1) span{
+  font-size: 14px;
+  padding: 5px 20px;
+
+  position: absolute; right: 0; bottom: 0;
+  line-height: normal;
+}
+figcaption div:nth-child(2){
+  padding: 20px;
+  text-align:justify;
+}
+/*【figure】第1個  +  所有【figure】*/
+figure figcaption{
+  top: calc(100% - 50px);
+}
+figure:hover figcaption{
+  top: 0%; 
+}
+/*【figure】第2個 */
+figure:nth-of-type(2) figcaption{
+  top: 0;
+  left: -100%; 
+}
+figure:nth-of-type(2):hover figcaption{
+  top: 0;
+  left: 0%; 
+}
+/*【figure】第3個  */
+figure:nth-of-type(3) img{
+  position: absolute; 
+  top: 0; left: 0; z-index: 1;
+}
+figure:nth-of-type(3):hover img{
+  left: 100%; 
+}
+/*【figure】第4個  */
+figure:nth-of-type(4) img{
+  position: absolute;
+  z-index: 2;
+  filter:blur(2px) grayscale(100%);
+}
+figure:nth-of-type(4):hover img{
+  transform: scale(1.2);
+  filter:blur(0px) grayscale(0%);  
+}
+
+/* section3  #map google地圖 ==================== */
+#map div{
+text-align: center;
+}
+
+#map iframe{
+  width: 40%;  height: 60vh;  margin:1%;
+  border-radius: 20px; box-shadow: 1px 1px 3px #000;
+  overflow: hidden;
+  background: green;
+}
